@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Vyfrost/Assets/Font/RedHatMono/MenuDescription.tres" type="FontFile" id=1]
+[ext_resource path="res://Vyfrost/Components/MenuDescription.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.584314, 0.909804, 0.972549, 0.54902 )
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[node name="MenuDescription" type="Label"]
+unique_name_in_owner = true
+offset_top = 11.0
+offset_right = 116.0
+offset_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color( 0.584314, 0.909804, 0.972549, 1 )
+theme_override_fonts/font = ExtResource( 1 )
+theme_override_styles/normal = SubResource( 3 )
+align = 1
+script = ExtResource( 2 )

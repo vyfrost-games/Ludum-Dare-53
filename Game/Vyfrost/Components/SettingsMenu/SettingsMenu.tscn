@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds5tjv5wj7psu"]
+
+[ext_resource type="PackedScene" uid="uid://iss23r3bw321" path="res://Vyfrost/Components/MenuBackground.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Vyfrost/Components/MenuDescription.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://Vyfrost/Components/BackButton.tscn" id="5"]
+[ext_resource type="FontFile" uid="uid://cv0a83riw4af3" path="res://Vyfrost/Assets/Font/RedHatDisplay/Title.tres" id="6"]
+[ext_resource type="PackedScene" uid="uid://de3b45xcgb0yx" path="res://Vyfrost/Components/FormElements/SliderOption.tscn" id="7"]
+[ext_resource type="Script" path="res://Vyfrost/Components/SettingsMenu/SettingsMenu.gd" id="9"]
+[ext_resource type="PackedScene" path="res://Vyfrost/Components/FormElements/ToggleOption.tscn" id="10"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -75.5
+offset_right = 134.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9")
+
+[node name="MenuBackground" parent="." instance=ExtResource("1")]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 271.0
+offset_bottom = 151.0
+mouse_filter = 2
+horizontal_glow_margin = -20
+vertical_glow_margin = -60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 269.0
+offset_bottom = 38.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MenuTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.584314, 0.909804, 0.972549, 1)
+theme_override_fonts/font = ExtResource("6")
+text = "SETTINGS"
+
+[node name="OptionsContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 31.0
+offset_top = 38.0
+offset_right = 227.0
+offset_bottom = 173.0
+theme_override_constants/separation = 8
+
+[node name="SliderContainer" type="VBoxContainer" parent="OptionsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MasterVolume" parent="OptionsContainer/SliderContainer" instance=ExtResource("7")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MusicVolume" parent="OptionsContainer/SliderContainer" instance=ExtResource("7")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Music Volume"
+
+[node name="SFXVolume" parent="OptionsContainer/SliderContainer" instance=ExtResource("7")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="ToggleContainer" type="HBoxContainer" parent="OptionsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="OptionsContainer/ToggleContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_right = 0
+
+[node name="FullscreenToggle" parent="OptionsContainer/ToggleContainer/MarginContainer" instance=ExtResource("10")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 95.0
+offset_right = 253.0
+offset_bottom = 150.0
+mouse_filter = 2
+
+[node name="MenuDescription" parent="VBoxContainer3" instance=ExtResource("4")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "testing"
+
+[node name="BackButton" parent="." instance=ExtResource("5")]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 111.0
+offset_right = 177.0
+offset_bottom = 192.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

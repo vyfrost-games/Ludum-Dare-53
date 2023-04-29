@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://de3b45xcgb0yx"]
+
+[ext_resource type="Script" path="res://Vyfrost/Components/FormElements/SliderOption.gd" id="2"]
+
+[sub_resource type="Theme" id="Theme_u266p"]
+
+[node name="SliderOption" type="HBoxContainer"]
+offset_right = 232.0
+offset_bottom = 12.0
+theme = SubResource("Theme_u266p")
+theme_override_constants/separation = 16
+script = ExtResource("2")
+initial_value = 50
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+value = 50.0
+
+[connection signal="drag_ended" from="VBoxContainer/HSlider" to="." method="_on_HSlider_drag_ended"]
+[connection signal="drag_started" from="VBoxContainer/HSlider" to="." method="_on_HSlider_drag_started"]
+[connection signal="focus_entered" from="VBoxContainer/HSlider" to="." method="_on_HSlider_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/HSlider" to="." method="_on_HSlider_mouse_entered"]

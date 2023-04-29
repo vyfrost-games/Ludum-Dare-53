@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxd8l13x8kwrt"]
+
+[ext_resource type="PackedScene" uid="uid://cehpb1r12g76i" path="res://Components/UI/MagicProgressBar/MagicProgressBar.tscn" id="1_r16e6"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="MagicProgressBar" parent="." instance=ExtResource("1_r16e6")]
+offset_left = -41.0
+offset_top = -2.0
+offset_right = -41.0
+offset_bottom = -2.0
+size_flags_horizontal = 8

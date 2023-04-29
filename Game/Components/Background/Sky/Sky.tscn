@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dejul54hx83dw"]
+
+[ext_resource type="Texture2D" uid="uid://c12o5xsxkdlk3" path="res://Assets/Sprites/Background/Sky/New_sky.png" id="1_8qy7c"]
+
+[node name="Sky" type="Sprite2D"]
+texture = ExtResource("1_8qy7c")

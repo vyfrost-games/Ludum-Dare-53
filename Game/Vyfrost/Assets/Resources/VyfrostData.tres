@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="VyfrostData" load_steps=15 format=3 uid="uid://cnh624fnmhyc1"]
+
+[ext_resource type="Script" path="res://Vyfrost/Global/ResourceScripts/VyfrostData.gd" id="1"]
+
+[sub_resource type="InputEventKey" id="3"]
+
+[sub_resource type="InputEventKey" id="6"]
+
+[sub_resource type="InputEventKey" id="125"]
+
+[sub_resource type="InputEventKey" id="7"]
+
+[sub_resource type="InputEventMouseButton" id="129"]
+position = Vector2(286.875, 117.375)
+global_position = Vector2(765, 353)
+button_index = 5
+
+[sub_resource type="InputEventMouseButton" id="134"]
+position = Vector2(307.5, 106.5)
+global_position = Vector2(1230, 426)
+button_index = 4
+
+[sub_resource type="InputEventKey" id="14"]
+
+[sub_resource type="InputEventKey" id="133"]
+
+[sub_resource type="InputEventKey" id="13"]
+
+[sub_resource type="InputEventKey" id="2"]
+
+[sub_resource type="InputEventKey" id="132"]
+
+[sub_resource type="InputEventMouseButton" id="130"]
+position = Vector2(305.625, 98.625)
+global_position = Vector2(815, 303)
+button_index = 1
+
+[sub_resource type="InputEventKey" id="126"]
+
+[resource]
+script = ExtResource("1")
+data = {
+"controls": {
+"ui_accept": SubResource("3"),
+"ui_cancel": SubResource("6"),
+"ui_down": SubResource("125"),
+"ui_end": SubResource("7"),
+"ui_focus_next": SubResource("129"),
+"ui_focus_prev": SubResource("134"),
+"ui_home": SubResource("14"),
+"ui_left": SubResource("133"),
+"ui_page_down": SubResource("13"),
+"ui_page_up": SubResource("2"),
+"ui_right": SubResource("132"),
+"ui_select": SubResource("130"),
+"ui_up": SubResource("126")
+},
+"fullscreen": false,
+"game_mode": "chill",
+"language": "English (US)",
+"vibration": true,
+"volume": {
+"ambience": 75,
+"master": 75,
+"music": 75,
+"sfx": 75
+}
+}

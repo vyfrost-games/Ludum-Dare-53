@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://cehpb1r12g76i"]
+
+[ext_resource type="Script" path="res://Components/UI/MagicProgressBar/MagicProgressBar.gd" id="1_uu1um"]
+[ext_resource type="Texture2D" uid="uid://bkkl28ebkfpdp" path="res://Assets/Sprites/MagicProgressBar/Magic_progress_bar_bg.png" id="2_3gdas"]
+[ext_resource type="Texture2D" uid="uid://c8fi62skypmt5" path="res://Assets/Sprites/MagicProgressBar/Magic_bar_liquid_pixel.png" id="3_tjy55"]
+[ext_resource type="Texture2D" uid="uid://dwpa7crmbqf80" path="res://Assets/Sprites/MagicProgressBar/Star_white.png" id="4_cepfq"]
+[ext_resource type="Environment" uid="uid://bhm2dc3cttowk" path="res://default_env.tres" id="5_6wy38"]
+
+[sub_resource type="Gradient" id="Gradient_tmo3m"]
+colors = PackedColorArray(1, 1, 1, 0, 3, 3, 3, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dyija"]
+gradient = SubResource("Gradient_tmo3m")
+use_hdr = true
+
+[sub_resource type="Gradient" id="Gradient_nf2pn"]
+offsets = PackedFloat32Array(0, 0.514815, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p0sbm"]
+gradient = SubResource("Gradient_nf2pn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qugfh"]
+emission_shape = 3
+emission_box_extents = Vector3(10, 90, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.0
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_p0sbm")
+color_initial_ramp = SubResource("GradientTexture1D_dyija")
+
+[node name="MagicProgressBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_uu1um")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 205.0
+offset_bottom = 256.0
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("2_3gdas")
+texture_progress = ExtResource("3_tjy55")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(95, 150)
+amount = 7
+process_material = SubResource("ParticleProcessMaterial_qugfh")
+texture = ExtResource("4_cepfq")
+visibility_rect = Rect2(-25.6326, -105.451, 49.4658, 207.539)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_6wy38")

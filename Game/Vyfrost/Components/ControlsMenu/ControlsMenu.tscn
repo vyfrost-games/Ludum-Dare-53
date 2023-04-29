@@ -1,0 +1,140 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Vyfrost/Components/MenuBackground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Vyfrost/Assets/Font/RedHatDisplay/Title.tres" type="FontFile" id=4]
+[ext_resource path="res://Vyfrost/Components/MenuDescription.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Vyfrost/Components/BackButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Vyfrost/Components/FormElements/MapControlOption.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Vyfrost/Components/ControlsMenu/ControlsMenu.gd" type="Script" id=8]
+
+[node name="ControlsMenu" type="Control"]
+offset_right = 197.0
+offset_bottom = 175.0
+script = ExtResource( 8 )
+
+[node name="MenuBackground2" parent="." instance=ExtResource( 1 )]
+offset_right = 197.0
+offset_bottom = 174.0
+
+[node name="TitleContainer" type="VBoxContainer" parent="."]
+offset_right = 196.0
+offset_bottom = 38.0
+alignment = 1
+
+[node name="Title" type="Label" parent="TitleContainer"]
+offset_top = 10.0
+offset_right = 196.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color( 0.584314, 0.909804, 0.972549, 1 )
+theme_override_fonts/font = ExtResource( 4 )
+text = "CONTROLS"
+align = 1
+
+[node name="OptionContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 35.0
+offset_right = 182.0
+offset_bottom = 134.0
+theme_override_constants/separation = 8
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ActionControls" type="VBoxContainer" parent="OptionContainer"]
+offset_right = 166.0
+offset_bottom = 53.0
+alignment = 2
+
+[node name="Primary" parent="OptionContainer/ActionControls" instance=ExtResource( 7 )]
+unique_name_in_owner = true
+offset_right = 166.0
+offset_bottom = 15.0
+theme_override_constants/separation = 0
+alignment = 1
+action = "ui_select"
+
+[node name="PreviousItem" parent="OptionContainer/ActionControls" instance=ExtResource( 7 )]
+unique_name_in_owner = true
+offset_top = 19.0
+offset_right = 166.0
+offset_bottom = 34.0
+controlTitle = "Last Item"
+action = "ui_focus_prev"
+
+[node name="NextItem" parent="OptionContainer/ActionControls" instance=ExtResource( 7 )]
+unique_name_in_owner = true
+offset_top = 38.0
+offset_right = 166.0
+offset_bottom = 53.0
+controlTitle = "Next Item"
+action = "ui_focus_next"
+
+[node name="DirectionsContainer" type="HBoxContainer" parent="OptionContainer"]
+offset_top = 61.0
+offset_right = 166.0
+offset_bottom = 95.0
+size_flags_horizontal = 3
+
+[node name="VerticalDirections" type="VBoxContainer" parent="OptionContainer/DirectionsContainer"]
+offset_right = 81.0
+offset_bottom = 34.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Up" parent="OptionContainer/DirectionsContainer/VerticalDirections" instance=ExtResource( 7 )]
+unique_name_in_owner = true
+offset_right = 81.0
+offset_bottom = 15.0
+controlTitle = "Up"
+action = "ui_up"
+
+[node name="Down" parent="OptionContainer/DirectionsContainer/VerticalDirections" instance=ExtResource( 7 )]
+unique_name_in_owner = true
+offset_top = 19.0
+offset_right = 81.0
+offset_bottom = 34.0
+controlTitle = "Down"
+action = "ui_down"
+
+[node name="HorizontalDirections" type="VBoxContainer" parent="OptionContainer/DirectionsContainer"]
+offset_left = 85.0
+offset_right = 166.0
+offset_bottom = 34.0
+size_flags_horizontal = 3
+
+[node name="Left" parent="OptionContainer/DirectionsContainer/HorizontalDirections" instance=ExtResource( 7 )]
+unique_name_in_owner = true
+offset_right = 81.0
+offset_bottom = 15.0
+controlTitle = "Left"
+action = "ui_left"
+
+[node name="Right" parent="OptionContainer/DirectionsContainer/HorizontalDirections" instance=ExtResource( 7 )]
+unique_name_in_owner = true
+offset_top = 19.0
+offset_right = 81.0
+offset_bottom = 34.0
+controlTitle = "Right"
+action = "ui_right"
+
+[node name="DescriptionContainer" type="VBoxContainer" parent="."]
+offset_left = 15.0
+offset_top = 120.0
+offset_right = 183.0
+offset_bottom = 175.0
+mouse_filter = 2
+
+[node name="MenuDescription" parent="DescriptionContainer" instance=ExtResource( 5 )]
+offset_top = 22.0
+offset_right = 168.0
+offset_bottom = 33.0
+text = "testing"
+
+[node name="BackButton" parent="." instance=ExtResource( 6 )]
+offset_left = 54.0
+offset_top = 135.0
+offset_right = 142.0
+offset_bottom = 216.0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

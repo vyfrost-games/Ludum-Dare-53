@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsw330my0lgvt"]
+
+[ext_resource type="Script" path="res://Screens/World.gd" id="1_cwpyh"]
+[ext_resource type="PackedScene" uid="uid://bxd8l13x8kwrt" path="res://Components/UI/UI.tscn" id="2_u2bcq"]
+[ext_resource type="PackedScene" uid="uid://46s4wvwn0p15" path="res://Components/Background/Background.tscn" id="2_yqcdo"]
+[ext_resource type="PackedScene" uid="uid://d3kf8hs4urdid" path="res://Components/Witch/Witch.tscn" id="4_cyj6h"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_cwpyh")
+
+[node name="Background" parent="." instance=ExtResource("2_yqcdo")]
+
+[node name="UI" parent="." instance=ExtResource("2_u2bcq")]
+
+[node name="Witch" parent="." instance=ExtResource("4_cyj6h")]
+position = Vector2(424, 220)

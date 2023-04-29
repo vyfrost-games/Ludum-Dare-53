@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Vyfrost/Assets/Theme/VyfrostTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Vyfrost/Components/FormElements/MapControlOption.gd" type="Script" id=2]
+[ext_resource path="res://Vyfrost/Assets/Font/RedHatMono/ToggleText.tres" type="FontFile" id=3]
+
+[node name="MapControlOption" type="HBoxContainer"]
+offset_right = 93.0
+offset_bottom = 17.0
+custom_minimum_size = Vector2( 0, 12 )
+theme = ExtResource( 1 )
+theme_override_constants/separation = 6
+alignment = 2
+script = ExtResource( 2 )
+controlTitle = "Primary"
+
+[node name="ControlName" type="Label" parent="."]
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 14.0
+custom_minimum_size = Vector2( 26, 0 )
+size_flags_horizontal = 3
+text = "Primary"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 46.0
+offset_right = 87.0
+offset_bottom = 17.0
+size_flags_horizontal = 3
+
+[node name="ValueButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+offset_right = 16.0
+offset_bottom = 17.0
+custom_minimum_size = Vector2( 0, 12 )
+theme_override_fonts/font = ExtResource( 3 )
+toggle_mode = true
+
+[node name="DeviceButtonIcon" type="TextureRect" parent="."]
+offset_left = 93.0
+offset_right = 93.0
+offset_bottom = 17.0
+
+[connection signal="focus_entered" from="HBoxContainer/ValueButton" to="." method="_on_ValueButton_focus_entered"]
+[connection signal="mouse_entered" from="HBoxContainer/ValueButton" to="." method="_on_ValueButton_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/ValueButton" to="." method="_on_ValueButton_pressed"]

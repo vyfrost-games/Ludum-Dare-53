@@ -1,0 +1,16 @@
+[gd_scene load_steps=10 format=3 uid="uid://c415swpkax7sm"]
+
+[ext_resource type="Script" path="res://Components/Background/Houses/House.gd" id="1_71mnu"]
+[ext_resource type="Texture2D" uid="uid://ca3qrpdxq4ks6" path="res://Assets/Sprites/Background/Houses/House 1/House_1_pixel.png" id="2_tyynl"]
+[ext_resource type="Texture2D" uid="uid://dd7o03dlshlsg" path="res://Assets/Sprites/Background/Houses/House 1/House_1_silhouette_pixel.png" id="3_b8nf2"]
+[ext_resource type="Texture2D" uid="uid://ihlx3t2ijw3r" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v2_pixel.png" id="4_f6c5r"]
+[ext_resource type="Texture2D" uid="uid://5g6vcn4ee2po" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v2_silhouette_pixel.png" id="5_odf8s"]
+[ext_resource type="Texture2D" uid="uid://8f4b78c0jf7d" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v3_pixel.png" id="6_7uxca"]
+[ext_resource type="Texture2D" uid="uid://c6pd2qfniqchm" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v3_silhouette_pixel.png" id="7_8uxqr"]
+[ext_resource type="Texture2D" uid="uid://37odr8d85fkr" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v4_pixel.png" id="8_82pae"]
+[ext_resource type="Texture2D" uid="uid://caf6yh43uuo8h" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v4_solhouette_pixel.png" id="9_47xse"]
+
+[node name="House" type="Sprite2D"]
+script = ExtResource("1_71mnu")
+houseTextures = [ExtResource("2_tyynl"), ExtResource("3_b8nf2"), ExtResource("4_f6c5r"), ExtResource("5_odf8s"), ExtResource("6_7uxca"), ExtResource("7_8uxqr"), ExtResource("8_82pae"), ExtResource("9_47xse")]
+silhouette = null
