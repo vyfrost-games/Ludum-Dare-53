@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://46s4wvwn0p15"]
+[gd_scene load_steps=16 format=3 uid="uid://b02ynsbfug1dn"]
 
 [ext_resource type="PackedScene" uid="uid://dejul54hx83dw" path="res://Components/Background/Sky/Sky.tscn" id="1_xnuoa"]
 [ext_resource type="Texture2D" uid="uid://bmv2573thqbip" path="res://Assets/Sprites/Background/Sky/Squished_sky.png" id="2_cm1jf"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c4fxlmof0y67p" path="res://Assets/Sprites/Background/Clouds/Cloud_5_pixel.png" id="7_kto33"]
 [ext_resource type="Texture2D" uid="uid://bxnev5itgo2f6" path="res://Assets/Sprites/Background/Clouds/Cloud_7_pixel.png" id="9_kdbek"]
 [ext_resource type="Texture2D" uid="uid://dv3kldjs4gbko" path="res://Assets/Sprites/Background/Clouds/Cloud_8_pixel.png" id="10_hoseq"]
+[ext_resource type="PackedScene" uid="uid://c0h111eka6erq" path="res://Components/UI/Notification/NotificationSpawner.tscn" id="11_egsjw"]
 [ext_resource type="PackedScene" uid="uid://bg1oxnb4l70en" path="res://Components/Background/Houses/HouseGenerator.tscn" id="12_k8lvm"]
+[ext_resource type="PackedScene" uid="uid://ni78c8dndwmd" path="res://Components/Background/WitchHut/WitchHut.tscn" id="12_pfrqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkmle"]
 size = Vector2(20, 948)
@@ -27,16 +29,28 @@ position = Vector2(-796, 153)
 
 [node name="SkyLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.005, 0.005)
-motion_mirroring = Vector2(1600, 0)
 
 [node name="Sky" parent="ParallaxBackground/SkyLayer" instance=ExtResource("1_xnuoa")]
 position = Vector2(18, 201)
 texture = ExtResource("2_cm1jf")
 
+[node name="CloudsFarLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-800, 4)
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="Cloud6" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(821, 51)
+texture = ExtResource("7_kto33")
+cloud_texture_index = 4
+
+[node name="Cloud7" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(788, -88)
+texture = ExtResource("10_hoseq")
+cloud_texture_index = 7
+
 [node name="CloudsNearbyLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-800, 4)
 motion_scale = Vector2(0.8, 0.8)
-motion_mirroring = Vector2(1600, 0)
 
 [node name="Cloud" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
 texture = ExtResource("4_a5jam")
@@ -65,40 +79,23 @@ position = Vector2(708, -81)
 texture = ExtResource("9_kdbek")
 cloud_texture_index = 6
 
-[node name="CloudsFarLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-800, 4)
-motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(1600, 0)
-
-[node name="Cloud6" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
-position = Vector2(821, 51)
-texture = ExtResource("7_kto33")
-cloud_texture_index = 4
-
-[node name="Cloud7" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
-position = Vector2(788, -88)
-texture = ExtResource("10_hoseq")
-cloud_texture_index = 7
-
 [node name="HousesBehindLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-4, 115)
 motion_scale = Vector2(0.8, 0.8)
-motion_mirroring = Vector2(1600, 0)
 
 [node name="HouseGenerator2" parent="ParallaxBackground/HousesBehindLayer" instance=ExtResource("12_k8lvm")]
-position = Vector2(-812, 257)
+position = Vector2(-1058, 268)
 silhouette = true
-total_houses = 14
+total_houses = 21
 house_variations = Array[int]([2, 2, 0, 0])
 space_before_next_house = 115
 
 [node name="HousesInFrontLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-794, 114)
-motion_mirroring = Vector2(1600, 0)
 
 [node name="HouseGenerator" parent="ParallaxBackground/HousesInFrontLayer" instance=ExtResource("12_k8lvm")]
-position = Vector2(-13, 250)
-total_houses = 8
+position = Vector2(-226, 246)
+total_houses = 12
 
 [node name="Border" type="StaticBody2D" parent="."]
 position = Vector2(-25, -174)
@@ -109,7 +106,7 @@ shape = SubResource("RectangleShape2D_mkmle")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
-position = Vector2(3199, -9)
+position = Vector2(1614, -93)
 shape = SubResource("RectangleShape2D_mkmle")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Border"]
@@ -119,3 +116,15 @@ shape = SubResource("RectangleShape2D_3tmqw")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
 position = Vector2(1597.75, -450)
 shape = SubResource("RectangleShape2D_ew5r5")
+
+[node name="NotificationSpawner" parent="." instance=ExtResource("11_egsjw")]
+current_notifications = 15
+
+[node name="WitchHut" parent="." instance=ExtResource("12_pfrqf")]
+position = Vector2(106, -349)
+
+[node name="WitchHut2" parent="." instance=ExtResource("12_pfrqf")]
+position = Vector2(1435, -412)
+variant = 1
+
+[editable path="NotificationSpawner"]

@@ -4,3 +4,5 @@
 
 [node name="HouseGenerator" type="Node2D"]
 script = ExtResource("1_ilrkh")
+total_houses = 5
+house_variations = Array[int]([4, 0, 0, 0])

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxd8l13x8kwrt"]
 
-[ext_resource type="PackedScene" uid="uid://cehpb1r12g76i" path="res://Components/UI/MagicProgressBar/MagicProgressBar.tscn" id="1_r16e6"]
+[ext_resource type="PackedScene" uid="uid://b0p7634ldvyk5" path="res://Components/UI/MagicProgressBar/MagicProgressBar.tscn" id="1_r16e6"]
 
 [node name="UI" type="CanvasLayer"]
 

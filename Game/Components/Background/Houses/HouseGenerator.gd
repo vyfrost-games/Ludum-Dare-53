@@ -17,11 +17,11 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_all_houses()
-
 	# --- CONNECT TO SIGNALS ---
-	pass
+#	Global.new_notification.connect(handle_new_notification)
 
-func add_house(silhouette: bool, house_index: int) -> House:
+
+func add_house(house_index: int) -> House:
 	var new_house = House.new()
 	new_house.silhouette = silhouette
 	new_house.house_texture_index = house_index
@@ -30,11 +30,11 @@ func add_house(silhouette: bool, house_index: int) -> House:
 
 func add_all_houses() -> void:
 	for n in range(total_houses):
-		var house = add_house(silhouette, (n % house_variations.size()) - 1)
+		var house = add_house((n % house_variations.size()) - 1)
 		house.position.x += space_before_next_house * n
 
-func get_random_house() -> int:
-	return int(randf_range(0, house_variations.size()))
+func get_random_house_variation() -> int:
+	return int(randf_range(0, house_variations.size() - 1))
 
 func set_silhouette(new_value: bool) -> void:
 	silhouette = new_value
@@ -56,10 +56,14 @@ func set_space_before_next_house(new_value: int) -> void:
 
 func set_house_variations(new_value: Array[int]) -> void:
 	house_variations = new_value
-	var houses: Array[Node] = get_children()
-	for n in house_variations.size():
-		var house : House = houses[n]
-		house.house_texture_index = house_variations[n - 1]
+#	var house_containers: Array[Node] = get_children()
+#	for n in house_variations.size():
+#		var house : Node2D = house_containers[n][]
+#		house.house_texture_index = house_variations[n - 1]
+
+###########################
+
 
 # --- HANDLE SIGNALS ---
-
+#func handle_new_notification(potion_colour: String) -> void:
+#	print('New notification! | ', potion_colour)

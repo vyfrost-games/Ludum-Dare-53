@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cehpb1r12g76i"]
+[gd_scene load_steps=11 format=3 uid="uid://b0p7634ldvyk5"]
 
 [ext_resource type="Script" path="res://Components/UI/MagicProgressBar/MagicProgressBar.gd" id="1_uu1um"]
-[ext_resource type="Texture2D" uid="uid://bkkl28ebkfpdp" path="res://Assets/Sprites/MagicProgressBar/Magic_progress_bar_bg.png" id="2_3gdas"]
-[ext_resource type="Texture2D" uid="uid://c8fi62skypmt5" path="res://Assets/Sprites/MagicProgressBar/Magic_bar_liquid_pixel.png" id="3_tjy55"]
-[ext_resource type="Texture2D" uid="uid://dwpa7crmbqf80" path="res://Assets/Sprites/MagicProgressBar/Star_white.png" id="4_cepfq"]
+[ext_resource type="Texture2D" uid="uid://bkkl28ebkfpdp" path="res://Assets/Sprites/UI/MagicProgressBar/Magic_progress_bar_bg.png" id="2_6m7tn"]
+[ext_resource type="Texture2D" uid="uid://c8fi62skypmt5" path="res://Assets/Sprites/UI/MagicProgressBar/Magic_bar_liquid_pixel.png" id="3_khod6"]
+[ext_resource type="Texture2D" uid="uid://dwpa7crmbqf80" path="res://Assets/Sprites/UI/MagicProgressBar/Star_white.png" id="4_okxsi"]
 [ext_resource type="Environment" uid="uid://bhm2dc3cttowk" path="res://default_env.tres" id="5_6wy38"]
 
 [sub_resource type="Gradient" id="Gradient_tmo3m"]
@@ -44,14 +44,14 @@ offset_bottom = 256.0
 value = 50.0
 fill_mode = 3
 nine_patch_stretch = true
-texture_under = ExtResource("2_3gdas")
-texture_progress = ExtResource("3_tjy55")
+texture_under = ExtResource("2_6m7tn")
+texture_progress = ExtResource("3_khod6")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(95, 150)
 amount = 7
 process_material = SubResource("ParticleProcessMaterial_qugfh")
-texture = ExtResource("4_cepfq")
+texture = ExtResource("4_okxsi")
 visibility_rect = Rect2(-25.6326, -105.451, 49.4658, 207.539)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

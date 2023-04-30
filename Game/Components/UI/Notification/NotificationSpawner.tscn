@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0h111eka6erq"]
+
+[ext_resource type="Script" path="res://Components/UI/Notification/NotificationSpawner.gd" id="1_smjbc"]
+[ext_resource type="PackedScene" uid="uid://dkfhutt3ggkt0" path="res://Components/UI/Notification/Notification.tscn" id="2_8ii0x"]
+
+[node name="NotificationSpawner" type="Node2D"]
+position = Vector2(178, 32)
+script = ExtResource("1_smjbc")
+metadata/_edit_group_ = true
+
+[node name="Notification" parent="." instance=ExtResource("2_8ii0x")]

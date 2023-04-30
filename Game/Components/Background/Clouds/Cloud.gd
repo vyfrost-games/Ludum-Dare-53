@@ -27,7 +27,7 @@ func _ready():
 	# --- CONNECT TO SIGNALS ---
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Editor only
 	if Engine.is_editor_hint():
 		if current_cloud_index != cloud_texture_index:

@@ -2,13 +2,16 @@ extends Node
 
 # Exports
 
-# Signals
+### Signals ###
+# Pause
 signal pause_game
 signal pause_game_movement
 signal play_game
 signal play_game_movement
+# Time
 signal new_second
 signal restart
+signal new_notification(potion: String)
 ### State ###
 # Time
 var paused := true
@@ -16,7 +19,8 @@ var paused_movement := false
 var previous_game_second: int # Track total seconds played
 var game_second: float = 0 # Raw seconds (not rounded)
 var total_seconds_played: int = 0 : get = get_time # Clean
-
+# Notifications
+var notifications : Array[NotificationBubble] = []
 # References
 
 
@@ -69,6 +73,14 @@ func gametime_log():
 
 func handle_restart() -> void:
 	play()
+
+# --- NOTIFICATIONS ---
+func add_notification(potion_colour: String) -> void:
+	new_notification.emit(potion_colour)
+
+func remove_notification(notification_bubble: NotificationBubble) -> void:
+	var notification_index := notifications.find(notification_bubble)
+	notifications.remove_at(notification_index)
 
 # --- HANDLE SIGNALS ---
 

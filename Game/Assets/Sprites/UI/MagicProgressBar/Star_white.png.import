@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwpa7crmbqf80"
-path="res://.godot/imported/Star_white.png-722e22154925473081e9dc16733f5e6f.ctex"
+path="res://.godot/imported/Star_white.png-82016f3282e7016aff310ef440cef28e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/MagicProgressBar/Star_white.png"
-dest_files=["res://.godot/imported/Star_white.png-722e22154925473081e9dc16733f5e6f.ctex"]
+source_file="res://Assets/Sprites/UI/MagicProgressBar/Star_white.png"
+dest_files=["res://.godot/imported/Star_white.png-82016f3282e7016aff310ef440cef28e.ctex"]
 
 [params]
 

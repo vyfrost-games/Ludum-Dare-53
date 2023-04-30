@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Screens/World.gd" id="1_cwpyh"]
 [ext_resource type="PackedScene" uid="uid://bxd8l13x8kwrt" path="res://Components/UI/UI.tscn" id="2_u2bcq"]
-[ext_resource type="PackedScene" uid="uid://46s4wvwn0p15" path="res://Components/Background/Background.tscn" id="2_yqcdo"]
+[ext_resource type="PackedScene" uid="uid://b02ynsbfug1dn" path="res://Components/Background/Background.tscn" id="2_yqcdo"]
 [ext_resource type="PackedScene" uid="uid://d3kf8hs4urdid" path="res://Components/Witch/Witch.tscn" id="4_cyj6h"]
 
 [node name="World" type="Node2D"]

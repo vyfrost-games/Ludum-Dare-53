@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4xlrg34gxslc"
-path="res://.godot/imported/Magic_bar_liquid_pixel 1.png-71cb210750ad5589d3ed73efd1c3754d.ctex"
+path="res://.godot/imported/Magic_bar_liquid_pixel 1.png-e13605cc039ae79e0faf473f91987f2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/MagicProgressBar/Magic_bar_liquid_pixel 1.png"
-dest_files=["res://.godot/imported/Magic_bar_liquid_pixel 1.png-71cb210750ad5589d3ed73efd1c3754d.ctex"]
+source_file="res://Assets/Sprites/UI/MagicProgressBar/Magic_bar_liquid_pixel 1.png"
+dest_files=["res://.godot/imported/Magic_bar_liquid_pixel 1.png-e13605cc039ae79e0faf473f91987f2a.ctex"]
 
 [params]
 

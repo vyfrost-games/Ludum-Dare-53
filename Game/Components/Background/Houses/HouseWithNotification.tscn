@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbkquy5eccgvl"]
+
+[ext_resource type="PackedScene" uid="uid://c415swpkax7sm" path="res://Components/Background/Houses/House.tscn" id="1_ogvc6"]
+[ext_resource type="Script" path="res://Components/Background/Houses/HouseWithNotification.gd" id="1_oxkqw"]
+[ext_resource type="PackedScene" uid="uid://dkfhutt3ggkt0" path="res://Components/UI/Notification/Notification.tscn" id="2_bkmlq"]
+
+[node name="HouseWithNotification" type="Node2D"]
+script = ExtResource("1_oxkqw")
+houseTextures = null
+house_texture_index = null
+silhouette = null
+
+[node name="Notification" parent="." instance=ExtResource("2_bkmlq")]
+position = Vector2(0, -160)
+
+[node name="House" parent="." instance=ExtResource("1_ogvc6")]

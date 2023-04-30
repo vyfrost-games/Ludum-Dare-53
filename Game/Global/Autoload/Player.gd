@@ -3,11 +3,11 @@ extends Node
 # Exports
 
 # Signals
-
+signal magic_changed
 # State
 var max_magic: int = 1000
-var current_magic: float = 200
-var magic_depletion_rate: float = 1
+var current_magic: float = 400 : set = set_magic
+var magic_depletion_rate: float = 2
 
 # References
 
@@ -19,13 +19,15 @@ func _ready() -> void:
 	# --- CONNECT TO SIGNALS ---
 	Global.new_second.connect(handle_new_second)
 
-func _process(delta: float) -> void:
-#	print(delta)
-	pass
+
+func set_magic(new_value: float) -> void:
+	current_magic = new_value
+	magic_changed.emit()
 
 # --- HANDLE SIGNALS ---
 func handle_new_second() -> void:
 	current_magic -= magic_depletion_rate
+
 	if current_magic < 0:
 		Global.pause()
 		Global.pause_movement()
