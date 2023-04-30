@@ -1,1 +1,13 @@
 res://default_env.tres
+res://Components/Background/Houses/House.tscn
+res://Components/Background/Houses/House.gd
+res://Components/Background/Houses/HouseGenerator.gd
+res://Components/Background/Houses/HouseGenerator.tscn
+res://Screens/World.tscn
+res://Components/Witch/Witch.tscn
+res://Components/Background/Clouds/Cloud.tscn
+res://Components/Background/Background.tscn
+res://Components/Background/Sky/Sky.tscn
+res://Components/UI/UI.tscn
+res://Components/UI/MagicProgressBar/MagicProgressBar.tscn
+res://Components/Witch/Witch.gd

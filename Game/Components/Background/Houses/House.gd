@@ -1,5 +1,6 @@
 @tool
 extends Sprite2D
+class_name House
 
 # Exports
 @export var houseTextures := [
@@ -19,10 +20,8 @@ var silhoutteTextures := [
 # Signals
 
 # State
-var current_house_index := house_texture_index
 var current_silhouette := silhouette
 # References
-#@onready var sprite_2d = $Sprite2D
 
 
 
@@ -32,18 +31,9 @@ func _ready():
 	# --- CONNECT TO SIGNALS ---
 	pass
 
-func _process(delta: float) -> void:
-	# Editor only
-	if Engine.is_editor_hint():
-		if current_house_index != house_texture_index:
-			current_house_index = house_texture_index
-			set_house_texture_index(current_house_index)
-		if current_silhouette != silhouette:
-			current_silhouette = silhouette
-			set_house_texture_index(current_house_index)
-
 
 func set_house_texture_index(new_index: int) -> void:
+	house_texture_index = new_index
 	if silhouette:
 		texture = silhoutteTextures[house_texture_index]
 		scale = Vector2(0.8, 0.8)

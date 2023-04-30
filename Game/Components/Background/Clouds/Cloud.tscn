@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dv3kldjs4gbko" path="res://Assets/Sprites/Background/Clouds/Cloud_8_pixel.png" id="9_bg4rc"]
 
 [node name="Cloud" type="Sprite2D"]
-texture = ExtResource("1_ak3wi")
+texture = ExtResource("4_yi6rg")
 script = ExtResource("2_clhrf")
 clouds = [ExtResource("1_ak3wi"), ExtResource("3_t47tj"), ExtResource("4_yi6rg"), ExtResource("5_ja6jb"), ExtResource("6_jaspt"), ExtResource("7_4un1i"), ExtResource("8_y6jks"), ExtResource("9_bg4rc")]
 cloud_texture_index = 2

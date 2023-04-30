@@ -43,16 +43,10 @@ func move_state(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, Vector2.ZERO.x, FRICTION * delta)
 		velocity.y = move_toward(velocity.y, Vector2.ZERO.y, FRICTION * delta)
 		animation_player.play("Idle")
-#	elif input_direction.x < 0 or input_direction.y < 0:
-#		animation_player.play("Fly")
-#		velocity.x = move_toward(velocity.x, -MAX_SPEED, input_direction.x * ACCELERATION * delta)
-#		velocity.y = move_toward(velocity.y, -MAX_SPEED, input_direction.y * ACCELERATION * delta)
 	else:
 		animation_player.play("Fly")
 		velocity.x = max(move_toward(velocity.x, MAX_SPEED, input_direction.x * ACCELERATION * delta), -MAX_SPEED)
 		velocity.y = max(move_toward(velocity.y, MAX_SPEED, input_direction.y * ACCELERATION * delta), -MAX_SPEED)
-
-	print(velocity.x)
 
 	# Orientation
 	sprite_2d.flip_h = input_direction.x > 0

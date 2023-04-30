@@ -11,6 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://caf6yh43uuo8h" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v4_solhouette_pixel.png" id="9_47xse"]
 
 [node name="House" type="Sprite2D"]
+texture = ExtResource("2_tyynl")
 script = ExtResource("1_71mnu")
 houseTextures = [ExtResource("2_tyynl"), ExtResource("3_b8nf2"), ExtResource("4_f6c5r"), ExtResource("5_odf8s"), ExtResource("6_7uxca"), ExtResource("7_8uxqr"), ExtResource("8_82pae"), ExtResource("9_47xse")]
-silhouette = null
