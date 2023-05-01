@@ -14,6 +14,7 @@ extends Node2D
 func _ready():
 	Global.play()
 	Global.trigger_next_notification()
+	Global.play_music.emit('Main')
 	# --- CONNECT TO SIGNALS ---
 	pass
 

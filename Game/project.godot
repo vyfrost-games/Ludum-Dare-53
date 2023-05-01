@@ -20,13 +20,13 @@ config/icon="res://icon.png"
 
 VyfrostGlobal="*res://Vyfrost/Global/Autoload/VyfrostGlobal.gd"
 Global="*res://Global/Autoload/Global.gd"
-Audio="*res://Global/Autoload/Audio.gd"
 Player="*res://Global/Autoload/Player.gd"
 
 [display]
 
 window/size/viewport_width=800
 window/size/viewport_height=450
+window/size/initial_position=Vector2i(800, 450)
 window/stretch/mode="viewport"
 
 [gui]

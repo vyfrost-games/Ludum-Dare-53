@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsw330my0lgvt"]
+[gd_scene load_steps=6 format=3 uid="uid://dsw330my0lgvt"]
 
 [ext_resource type="Script" path="res://Screens/World.gd" id="1_cwpyh"]
 [ext_resource type="PackedScene" uid="uid://bxd8l13x8kwrt" path="res://Components/UI/UI.tscn" id="2_u2bcq"]
 [ext_resource type="PackedScene" uid="uid://b02ynsbfug1dn" path="res://Components/Background/Background.tscn" id="2_yqcdo"]
 [ext_resource type="PackedScene" uid="uid://d3kf8hs4urdid" path="res://Components/Witch/Witch.tscn" id="4_cyj6h"]
+[ext_resource type="PackedScene" uid="uid://ddfiyi2fcirl7" path="res://Global/Utils/Audio.tscn" id="5_u303r"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_cwpyh")
@@ -21,5 +22,7 @@ limit_top = -500
 limit_right = 900
 limit_bottom = 450
 editor_draw_limits = true
+
+[node name="Audio" parent="." instance=ExtResource("5_u303r")]
 
 [editable path="Witch"]

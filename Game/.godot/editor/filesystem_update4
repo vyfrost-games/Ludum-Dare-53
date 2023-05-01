@@ -18,3 +18,7 @@ res://Global/Autoload/Player.gd
 res://Components/Background/BuyNotifications.gd
 res://Screens/World.gd
 res://Global/Autoload/Global.gd
+res://Global/Utils/Audio.tscn
+res://Global/Utils/Audio.gd
+res://default_bus_layout.tres
+res://Screens/MainMenu/MainMenu.tscn

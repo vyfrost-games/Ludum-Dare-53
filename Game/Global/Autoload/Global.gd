@@ -15,6 +15,9 @@ signal restart
 signal new_notification(potion: int)
 signal notification_removed
 signal notification_error(message: String)
+# Audio
+signal play_sfx(track_title: String, volume_db: float)
+signal play_music(track_title: String)
 ### State ###
 # Time
 var paused := true

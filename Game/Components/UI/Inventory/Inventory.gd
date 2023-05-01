@@ -26,8 +26,7 @@ func _ready():
 
 
 # --- HANDLE SIGNALS ---
-func handle_add_potion(potion_colour: int) -> void:
-	print('show potion')
+func handle_add_potion(_potion_colour: int) -> void:
 	$Potion1.texture = potion_textures[Player.current_inventory[0]]
 	$AnimationPlayer.play_backwards("1=>0")
 
