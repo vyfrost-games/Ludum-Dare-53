@@ -3,11 +3,16 @@ extends Sprite2D
 class_name House
 
 # Exports
-@export var houseTextures := [
+var houseTextures := [
 	preload("res://Assets/Sprites/Background/Houses/House 1/House_1_pixel.png"),
 	preload("res://Assets/Sprites/Background/Houses/House 1/House_1_v2_pixel.png"),
 	preload("res://Assets/Sprites/Background/Houses/House 1/House_1_v3_pixel.png"),
 	preload("res://Assets/Sprites/Background/Houses/House 1/House_1_v4_pixel.png"),
+	preload("res://Assets/Sprites/Background/Houses/House 2/House_2_1_pixel.png"),
+	preload("res://Assets/Sprites/Background/Houses/House 2/House_2_1_v2_pixel.png"),
+	preload("res://Assets/Sprites/Background/Houses/House 2/House_2_1_v3_pixel.png"),
+	preload("res://Assets/Sprites/Background/Houses/House 2/House_2_1_v4_pixel.png"),
+	preload("res://Assets/Sprites/Background/Houses/House 2/House_2_1_v5_pixel.png")
 	]
 var silhouetteTextures := [
 	preload("res://Assets/Sprites/Background/Houses/House 1/House_1_silhouette_pixel.png"),
@@ -15,7 +20,7 @@ var silhouetteTextures := [
 	preload("res://Assets/Sprites/Background/Houses/House 1/House_1_v3_silhouette_pixel.png"),
 	preload("res://Assets/Sprites/Background/Houses/House 1/House_1_v4_solhouette_pixel.png")
 ]
-@export_range(0, 3) var house_texture_index : int = 0 : set = set_house_texture_index
+@export_range(0, 8) var house_texture_index : int = 0 : set = set_house_texture_index
 @export var silhouette := false : set = set_silhouette
 # Signals
 

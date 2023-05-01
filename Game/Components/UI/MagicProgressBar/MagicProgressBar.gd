@@ -10,19 +10,19 @@ extends Control
 @onready var texture_progress_bar = $TextureProgressBar
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	handle_magic_changed()
-
 	# --- CONNECT TO SIGNALS ---
 	Player.magic_changed.connect(handle_magic_changed)
 
 func change_progress_amount(new_percentage: float) -> int:
 	if new_percentage < 0 or new_percentage > 100 : return ERR_INVALID_PARAMETER
 	var max_value : float = 90
-	var adjusted_percentage := new_percentage * (max_value/100)
-	texture_progress_bar.value = adjusted_percentage
+	var adjusted_percentage := new_percentage * (max_value/100.0)
+	var tween = create_tween()
+	tween.tween_property($TextureProgressBar, 'value', adjusted_percentage, 1)
+#	texture_progress_bar.value = adjusted_percentage
 	return OK
 
 

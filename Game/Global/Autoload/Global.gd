@@ -11,7 +11,10 @@ signal play_game_movement
 # Time
 signal new_second
 signal restart
-signal new_notification(potion: String)
+# Notifications
+signal new_notification(potion: int)
+signal notification_removed
+signal notification_error(message: String)
 ### State ###
 # Time
 var paused := true
@@ -21,6 +24,12 @@ var game_second: float = 0 # Raw seconds (not rounded)
 var total_seconds_played: int = 0 : get = get_time # Clean
 # Notifications
 var notifications : Array[NotificationBubble] = []
+var potion_history : Array[int] = []
+enum POTION_COLOURS {
+	BLUE,
+	PINK,
+	GREEN
+}
 # References
 
 
@@ -75,12 +84,17 @@ func handle_restart() -> void:
 	play()
 
 # --- NOTIFICATIONS ---
-func add_notification(potion_colour: String) -> void:
+func trigger_next_notification() -> void:
+	add_notification(int(randf_range(0, 2)))
+
+
+func add_notification(potion_colour: int) -> void:
 	new_notification.emit(potion_colour)
 
 func remove_notification(notification_bubble: NotificationBubble) -> void:
 	var notification_index := notifications.find(notification_bubble)
 	notifications.remove_at(notification_index)
+	notification_removed.emit()
 
 # --- HANDLE SIGNALS ---
 

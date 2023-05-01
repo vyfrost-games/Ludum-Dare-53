@@ -13,4 +13,13 @@ script = ExtResource("1_cwpyh")
 [node name="UI" parent="." instance=ExtResource("2_u2bcq")]
 
 [node name="Witch" parent="." instance=ExtResource("4_cyj6h")]
-position = Vector2(424, 220)
+position = Vector2(226, 184)
+
+[node name="Camera2D" parent="Witch" index="3"]
+limit_left = -1000
+limit_top = -500
+limit_right = 900
+limit_bottom = 450
+editor_draw_limits = true
+
+[editable path="Witch"]

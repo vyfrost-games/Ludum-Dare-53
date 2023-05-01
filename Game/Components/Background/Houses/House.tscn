@@ -1,8 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://c415swpkax7sm"]
 
 [ext_resource type="Script" path="res://Components/Background/Houses/House.gd" id="1_71mnu"]
-[ext_resource type="Texture2D" uid="uid://ca3qrpdxq4ks6" path="res://Assets/Sprites/Background/Houses/House 1/House_1_pixel.png" id="2_tyynl"]
+[ext_resource type="Texture2D" uid="uid://c8iiedqlf5sju" path="res://Assets/Sprites/Background/Houses/House 2/House_2_1_v5_pixel.png" id="1_yntuk"]
 
 [node name="House" type="Sprite2D"]
-texture = ExtResource("2_tyynl")
+texture = ExtResource("1_yntuk")
 script = ExtResource("1_71mnu")
+house_texture_index = 8

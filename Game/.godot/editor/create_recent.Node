@@ -1,6 +1,8 @@
 Node2D
+Container
 AnimationPlayer
 Sprite2D
+ProgressBar
 ParallaxLayer
 CollisionShape2D
 Area2D
@@ -20,7 +22,6 @@ MarginContainer
 BoxContainer
 GPUParticles2D
 TextureProgressBar
-ProgressBar
 SpotLight3D
 MeshInstance3D
 Sprite3D

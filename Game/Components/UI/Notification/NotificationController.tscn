@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://x5qokru6vede"]
+
+[ext_resource type="PackedScene" uid="uid://dkfhutt3ggkt0" path="res://Components/UI/Notification/Notification.tscn" id="1_8otqs"]
+[ext_resource type="Script" path="res://Components/UI/Notification/NotificationController.gd" id="1_vmxp7"]
+
+[node name="NotificationController" type="Node2D"]
+script = ExtResource("1_vmxp7")
+
+[node name="Notification" parent="." instance=ExtResource("1_8otqs")]
+position = Vector2(205, 15)
+
+[node name="Notification2" parent="." instance=ExtResource("1_8otqs")]
+position = Vector2(437, 12)
+
+[node name="Notification3" parent="." instance=ExtResource("1_8otqs")]
+position = Vector2(644, 14)
+
+[node name="Notification4" parent="." instance=ExtResource("1_8otqs")]
+position = Vector2(866, 13)
+
+[node name="Notification5" parent="." instance=ExtResource("1_8otqs")]
+position = Vector2(1131, 13)
+
+[node name="Notification6" parent="." instance=ExtResource("1_8otqs")]
+position = Vector2(1364, 14)

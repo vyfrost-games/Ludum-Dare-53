@@ -1,26 +1,34 @@
-[gd_scene load_steps=16 format=3 uid="uid://b02ynsbfug1dn"]
+[gd_scene load_steps=24 format=3 uid="uid://b02ynsbfug1dn"]
 
 [ext_resource type="PackedScene" uid="uid://dejul54hx83dw" path="res://Components/Background/Sky/Sky.tscn" id="1_xnuoa"]
 [ext_resource type="Texture2D" uid="uid://bmv2573thqbip" path="res://Assets/Sprites/Background/Sky/Squished_sky.png" id="2_cm1jf"]
 [ext_resource type="PackedScene" uid="uid://bnveg3sr2jni2" path="res://Components/Background/Clouds/Cloud.tscn" id="2_wvcib"]
-[ext_resource type="Texture2D" uid="uid://bqyeli1j8jlot" path="res://Assets/Sprites/Background/Clouds/Cloud_2_pixel.png" id="4_0f805"]
-[ext_resource type="Texture2D" uid="uid://8pjkx1di6qg2" path="res://Assets/Sprites/Background/Clouds/Cloud_1_pixel.png" id="4_a5jam"]
-[ext_resource type="Texture2D" uid="uid://pkdsvr5n2crs" path="res://Assets/Sprites/Background/Clouds/Cloud_4_pixel.png" id="6_0c5b1"]
-[ext_resource type="Texture2D" uid="uid://c4fxlmof0y67p" path="res://Assets/Sprites/Background/Clouds/Cloud_5_pixel.png" id="7_kto33"]
-[ext_resource type="Texture2D" uid="uid://bxnev5itgo2f6" path="res://Assets/Sprites/Background/Clouds/Cloud_7_pixel.png" id="9_kdbek"]
-[ext_resource type="Texture2D" uid="uid://dv3kldjs4gbko" path="res://Assets/Sprites/Background/Clouds/Cloud_8_pixel.png" id="10_hoseq"]
-[ext_resource type="PackedScene" uid="uid://c0h111eka6erq" path="res://Components/UI/Notification/NotificationSpawner.tscn" id="11_egsjw"]
+[ext_resource type="PackedScene" uid="uid://c415swpkax7sm" path="res://Components/Background/Houses/House.tscn" id="11_5pa4u"]
+[ext_resource type="PackedScene" uid="uid://dkfhutt3ggkt0" path="res://Components/UI/Notification/Notification.tscn" id="11_iwuxr"]
+[ext_resource type="Texture2D" uid="uid://37odr8d85fkr" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v4_pixel.png" id="12_j7wxc"]
 [ext_resource type="PackedScene" uid="uid://bg1oxnb4l70en" path="res://Components/Background/Houses/HouseGenerator.tscn" id="12_k8lvm"]
 [ext_resource type="PackedScene" uid="uid://ni78c8dndwmd" path="res://Components/Background/WitchHut/WitchHut.tscn" id="12_pfrqf"]
+[ext_resource type="Texture2D" uid="uid://ca3qrpdxq4ks6" path="res://Assets/Sprites/Background/Houses/House 1/House_1_pixel.png" id="12_tgagj"]
+[ext_resource type="Script" path="res://Components/Background/LeftBorderClouds.gd" id="14_pexve"]
+[ext_resource type="Texture2D" uid="uid://b143w12mpdlu8" path="res://Assets/Sprites/Background/Houses/House 2/House_2_1_pixel.png" id="14_qim1m"]
+[ext_resource type="Script" path="res://Components/Background/TopBorderClouds.gd" id="15_a3m0g"]
+[ext_resource type="Script" path="res://Components/Background/RightBorderClouds.gd" id="16_itoog"]
+[ext_resource type="Texture2D" uid="uid://c17xvqmm30wds" path="res://Assets/Sprites/Background/Houses/House 2/House_2_1_v2_pixel.png" id="16_o1r72"]
+[ext_resource type="Texture2D" uid="uid://8f4b78c0jf7d" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v3_pixel.png" id="17_yifov"]
+[ext_resource type="Texture2D" uid="uid://bljeheqvytj4m" path="res://Assets/Sprites/Background/Houses/House 2/House_2_1_v3_pixel.png" id="18_ikcty"]
+[ext_resource type="Script" path="res://Components/UI/Notification/NotificationController.gd" id="19_g1b2f"]
+[ext_resource type="Texture2D" uid="uid://ihlx3t2ijw3r" path="res://Assets/Sprites/Background/Houses/House 1/House_1_v2_pixel.png" id="19_k8gey"]
+[ext_resource type="Texture2D" uid="uid://5dw32u66awvi" path="res://Assets/Sprites/Background/Sky/Cloud_cluster_pixel.png" id="20_22suq"]
+[ext_resource type="Script" path="res://Components/Background/BuyNotifications.gd" id="20_dkme5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkmle"]
-size = Vector2(20, 948)
+size = Vector2(20, 864)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tmqw"]
-size = Vector2(3242, 21)
+size = Vector2(1672, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew5r5"]
-size = Vector2(3228.5, 21)
+size = Vector2(1651.5, 29.5)
 
 [node name="Background" type="Node2D"]
 position = Vector2(-796, 153)
@@ -38,46 +46,59 @@ texture = ExtResource("2_cm1jf")
 position = Vector2(-800, 4)
 motion_scale = Vector2(0.6, 0.6)
 
-[node name="Cloud6" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
-position = Vector2(821, 51)
-texture = ExtResource("7_kto33")
-cloud_texture_index = 4
+[node name="Cloud10" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(981, -24)
+cloud_texture_index = 5
 
-[node name="Cloud7" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
-position = Vector2(788, -88)
-texture = ExtResource("10_hoseq")
-cloud_texture_index = 7
+[node name="Cloud11" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(1034, -61)
+cloud_texture_index = 3
+
+[node name="Cloud12" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(495, 18)
+
+[node name="Cloud13" parent="ParallaxBackground/CloudsFarLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(723, 86)
+cloud_texture_index = 1
 
 [node name="CloudsNearbyLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-800, 4)
 motion_scale = Vector2(0.8, 0.8)
 
-[node name="Cloud" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
-texture = ExtResource("4_a5jam")
+[node name="Cloud14" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(307, 83)
 cloud_texture_index = 0
 
-[node name="Cloud2" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
-position = Vector2(336, 53)
-texture = ExtResource("4_0f805")
-cloud_texture_index = 1
-
-[node name="Cloud3" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
-position = Vector2(-334, 66)
-texture = ExtResource("7_kto33")
+[node name="Cloud15" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(363, 87)
 cloud_texture_index = 4
 
-[node name="Cloud4" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
-position = Vector2(-150, -47)
-texture = ExtResource("6_0c5b1")
+[node name="Cloud17" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(1104, 73)
+cloud_texture_index = 6
+
+[node name="Cloud18" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(1251, 131)
+cloud_texture_index = 5
+
+[node name="Cloud19" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(612, -32)
+cloud_texture_index = 5
+
+[node name="Cloud22" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(680, -43)
+
+[node name="Cloud20" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(640, -37)
+cloud_texture_index = 0
+
+[node name="Cloud21" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(700, 14)
 cloud_texture_index = 3
 
-[node name="Cloud5" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
-position = Vector2(415, -14)
-
-[node name="Cloud8" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
-position = Vector2(708, -81)
-texture = ExtResource("9_kdbek")
-cloud_texture_index = 6
+[node name="Cloud16" parent="ParallaxBackground/CloudsNearbyLayer" instance=ExtResource("2_wvcib")]
+position = Vector2(356, 119)
+cloud_texture_index = 5
 
 [node name="HousesBehindLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-4, 115)
@@ -87,15 +108,66 @@ motion_scale = Vector2(0.8, 0.8)
 position = Vector2(-1058, 268)
 silhouette = true
 total_houses = 21
-house_variations = Array[int]([2, 2, 0, 0])
+house_variations = Array[int]([0, 2, 0, 0])
 space_before_next_house = 115
 
 [node name="HousesInFrontLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-794, 114)
 
 [node name="HouseGenerator" parent="ParallaxBackground/HousesInFrontLayer" instance=ExtResource("12_k8lvm")]
+visible = false
 position = Vector2(-226, 246)
 total_houses = 12
+
+[node name="HousesInFront" type="Node2D" parent="ParallaxBackground/HousesInFrontLayer"]
+
+[node name="House" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(-25, 245)
+texture = ExtResource("12_tgagj")
+house_texture_index = 0
+
+[node name="House10" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(-230, 249)
+texture = ExtResource("12_j7wxc")
+house_texture_index = 3
+
+[node name="House2" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(207, 262)
+
+[node name="House3" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(1144, 261)
+texture = ExtResource("14_qim1m")
+house_texture_index = 4
+
+[node name="House4" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(1378, 246)
+texture = ExtResource("12_j7wxc")
+house_texture_index = 3
+
+[node name="House8" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(1608, 230)
+texture = ExtResource("16_o1r72")
+house_texture_index = 5
+
+[node name="House9" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(1855, 241)
+texture = ExtResource("17_yifov")
+house_texture_index = 2
+
+[node name="House5" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(883, 262)
+texture = ExtResource("18_ikcty")
+house_texture_index = 6
+
+[node name="House6" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(647, 249)
+texture = ExtResource("17_yifov")
+house_texture_index = 2
+
+[node name="House7" parent="ParallaxBackground/HousesInFrontLayer/HousesInFront" instance=ExtResource("11_5pa4u")]
+position = Vector2(442, 249)
+texture = ExtResource("19_k8gey")
+house_texture_index = 1
 
 [node name="Border" type="StaticBody2D" parent="."]
 position = Vector2(-25, -174)
@@ -106,25 +178,128 @@ shape = SubResource("RectangleShape2D_mkmle")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
-position = Vector2(1614, -93)
+position = Vector2(1614, -51)
 shape = SubResource("RectangleShape2D_mkmle")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Border"]
-position = Vector2(1580, 258)
+position = Vector2(795, 258)
 shape = SubResource("RectangleShape2D_3tmqw")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Border"]
-position = Vector2(1597.75, -450)
+position = Vector2(804, -396)
 shape = SubResource("RectangleShape2D_ew5r5")
 
-[node name="NotificationSpawner" parent="." instance=ExtResource("11_egsjw")]
-current_notifications = 15
+[node name="LeftBorderClouds" type="Node2D" parent="Border"]
+script = ExtResource("14_pexve")
 
-[node name="WitchHut" parent="." instance=ExtResource("12_pfrqf")]
-position = Vector2(106, -349)
+[node name="Sprite2D" type="Sprite2D" parent="Border/LeftBorderClouds"]
+position = Vector2(-39, -4)
+texture = ExtResource("20_22suq")
 
-[node name="WitchHut2" parent="." instance=ExtResource("12_pfrqf")]
-position = Vector2(1435, -412)
+[node name="Sprite2D2" type="Sprite2D" parent="Border/LeftBorderClouds"]
+position = Vector2(-44, 349)
+texture = ExtResource("20_22suq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Border/LeftBorderClouds"]
+position = Vector2(-37, -340)
+texture = ExtResource("20_22suq")
+
+[node name="TopBorderClouds" type="Node2D" parent="Border"]
+script = ExtResource("15_a3m0g")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Border/TopBorderClouds"]
+position = Vector2(56, -419)
+rotation = 1.5708
+texture = ExtResource("20_22suq")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Border/TopBorderClouds"]
+position = Vector2(390, -423)
+rotation = 1.5708
+texture = ExtResource("20_22suq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Border/TopBorderClouds"]
+position = Vector2(708, -432)
+rotation = 1.5708
+texture = ExtResource("20_22suq")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Border/TopBorderClouds"]
+position = Vector2(1054, -435)
+rotation = 1.5708
+texture = ExtResource("20_22suq")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Border/TopBorderClouds"]
+position = Vector2(1375, -433)
+rotation = 1.5708
+texture = ExtResource("20_22suq")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Border/TopBorderClouds"]
+position = Vector2(1669, -430)
+rotation = 1.5708
+texture = ExtResource("20_22suq")
+
+[node name="RightBorderClouds" type="Node2D" parent="Border"]
+script = ExtResource("16_itoog")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Border/RightBorderClouds"]
+position = Vector2(1635, -238)
+texture = ExtResource("20_22suq")
+flip_h = true
+
+[node name="Sprite2D10" type="Sprite2D" parent="Border/RightBorderClouds"]
+position = Vector2(1646, 105)
+texture = ExtResource("20_22suq")
+flip_h = true
+
+[node name="Sprite2D11" type="Sprite2D" parent="Border/RightBorderClouds"]
+position = Vector2(1653, 441)
+texture = ExtResource("20_22suq")
+flip_h = true
+
+[node name="NotificationController" type="Node2D" parent="."]
+script = ExtResource("19_g1b2f")
+
+[node name="Notification" parent="NotificationController" instance=ExtResource("11_iwuxr")]
+position = Vector2(221, 16)
+
+[node name="Notification2" parent="NotificationController" instance=ExtResource("11_iwuxr")]
+position = Vector2(443, 16)
+
+[node name="Notification3" parent="NotificationController" instance=ExtResource("11_iwuxr")]
+position = Vector2(646, 14)
+
+[node name="Notification4" parent="NotificationController" instance=ExtResource("11_iwuxr")]
+position = Vector2(892, 17)
+
+[node name="Notification5" parent="NotificationController" instance=ExtResource("11_iwuxr")]
+position = Vector2(1142, 12)
+
+[node name="Notification6" parent="NotificationController" instance=ExtResource("11_iwuxr")]
+position = Vector2(1376, 6.00001)
+
+[node name="BuyNotifications" type="Node2D" parent="."]
+position = Vector2(347, -354.876)
+script = ExtResource("20_dkme5")
+
+[node name="Notification" parent="BuyNotifications" instance=ExtResource("11_iwuxr")]
+position = Vector2(0, 0)
+buy_potion = true
+
+[node name="Bg" parent="BuyNotifications/Notification" index="0"]
+flip_h = true
+
+[node name="Notification2" parent="BuyNotifications" instance=ExtResource("11_iwuxr")]
+position = Vector2(662, 59.876)
+buy_potion = true
+colour = 1
+
+[node name="WitchHuts" type="Node2D" parent="."]
+
+[node name="WitchHut" parent="WitchHuts" instance=ExtResource("12_pfrqf")]
+position = Vector2(232.847, -309)
+
+[node name="WitchHut2" parent="WitchHuts" instance=ExtResource("12_pfrqf")]
+position = Vector2(1184, -262)
 variant = 1
 
-[editable path="NotificationSpawner"]
+[editable path="BuyNotifications/Notification"]
+[editable path="BuyNotifications/Notification2"]

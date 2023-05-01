@@ -1,17 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnveg3sr2jni2"]
+[gd_scene load_steps=3 format=3 uid="uid://bnveg3sr2jni2"]
 
-[ext_resource type="Texture2D" uid="uid://8pjkx1di6qg2" path="res://Assets/Sprites/Background/Clouds/Cloud_1_pixel.png" id="1_ak3wi"]
+[ext_resource type="Texture2D" uid="uid://df6j634drk1vq" path="res://Assets/Sprites/Background/Clouds/Little_clouds_1.png" id="1_kkl6i"]
 [ext_resource type="Script" path="res://Components/Background/Clouds/Cloud.gd" id="2_clhrf"]
-[ext_resource type="Texture2D" uid="uid://bqyeli1j8jlot" path="res://Assets/Sprites/Background/Clouds/Cloud_2_pixel.png" id="3_t47tj"]
-[ext_resource type="Texture2D" uid="uid://certdnchdclba" path="res://Assets/Sprites/Background/Clouds/Cloud_3_pixel.png" id="4_yi6rg"]
-[ext_resource type="Texture2D" uid="uid://pkdsvr5n2crs" path="res://Assets/Sprites/Background/Clouds/Cloud_4_pixel.png" id="5_ja6jb"]
-[ext_resource type="Texture2D" uid="uid://c4fxlmof0y67p" path="res://Assets/Sprites/Background/Clouds/Cloud_5_pixel.png" id="6_jaspt"]
-[ext_resource type="Texture2D" uid="uid://dtish1d2glvh" path="res://Assets/Sprites/Background/Clouds/Cloud_6_pixel.png" id="7_4un1i"]
-[ext_resource type="Texture2D" uid="uid://bxnev5itgo2f6" path="res://Assets/Sprites/Background/Clouds/Cloud_7_pixel.png" id="8_y6jks"]
-[ext_resource type="Texture2D" uid="uid://dv3kldjs4gbko" path="res://Assets/Sprites/Background/Clouds/Cloud_8_pixel.png" id="9_bg4rc"]
 
 [node name="Cloud" type="Sprite2D"]
-texture = ExtResource("4_yi6rg")
+position = Vector2(32.3691, 0)
+texture = ExtResource("1_kkl6i")
 script = ExtResource("2_clhrf")
-clouds = [ExtResource("1_ak3wi"), ExtResource("3_t47tj"), ExtResource("4_yi6rg"), ExtResource("5_ja6jb"), ExtResource("6_jaspt"), ExtResource("7_4un1i"), ExtResource("8_y6jks"), ExtResource("9_bg4rc")]
 cloud_texture_index = 2

@@ -1,18 +1,16 @@
-@tool
 extends Sprite2D
 
 # Exports
-@export var clouds := [
-	load("res://Assets/Sprites/Background/Clouds/Cloud_1_pixel.png"),
-	load("res://Assets/Sprites/Background/Clouds/Cloud_2_pixel.png"),
-	load("res://Assets/Sprites/Background/Clouds/Cloud_3_pixel.png"),
-	load("res://Assets/Sprites/Background/Clouds/Cloud_4_pixel.png"),
-	load("res://Assets/Sprites/Background/Clouds/Cloud_5_pixel.png"),
-	load("res://Assets/Sprites/Background/Clouds/Cloud_6_pixel.png"),
-	load("res://Assets/Sprites/Background/Clouds/Cloud_7_pixel.png"),
-	load("res://Assets/Sprites/Background/Clouds/Cloud_8_pixel.png"),
+var clouds := [
+	preload("res://Assets/Sprites/Background/Clouds/Little_clouds_1.png"),
+	preload("res://Assets/Sprites/Background/Clouds/Little_clouds_2.png"),
+	preload("res://Assets/Sprites/Background/Clouds/Little_clouds_3.png"),
+	preload("res://Assets/Sprites/Background/Clouds/Little_clouds_4.png"),
+	preload("res://Assets/Sprites/Background/Clouds/Little_clouds_5.png"),
+	preload("res://Assets/Sprites/Background/Clouds/Little_clouds_6.png"),
+	preload("res://Assets/Sprites/Background/Clouds/Little_clouds_7.png")
 	]
-@export_range(0, 7) var cloud_texture_index : int = 0
+@export_range(0, 6) var cloud_texture_index : int = 0
 # Signals
 
 # State
@@ -24,6 +22,11 @@ var current_cloud_index = cloud_texture_index
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	texture = clouds[cloud_texture_index]
+	var tween = create_tween()
+	tween.tween_property(self, 'position:x', position.x + 100, 12).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
+	tween.chain().tween_property(self, 'position:x', position.x, 12)
+	tween.set_loops()
+
 	# --- CONNECT TO SIGNALS ---
 	pass
 
